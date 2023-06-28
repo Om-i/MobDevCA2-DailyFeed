@@ -1,0 +1,7 @@
+{
+  "name": "ca2app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
