@@ -19,13 +19,13 @@ export class MovieService {
 
   getTopRatedMovies(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      `${environment.baseUrl}movie/popular?api_key=${environment.apiKey}&page=${page}` // note `` not '' as it accepts dynamic variables ${}
+      `${environment.baseUrl}/movie/popular?api_key=${environment.apiKey}&page=${page}` // note `` not '' as it accepts dynamic variables ${}
       );
   }
 
   getMovieDetails(id: string) {
     return this.http.get(
-      `${environment.baseUrl}movie/${id}?api_key=${environment.apiKey}`
+      `${environment.baseUrl}/movie/${id}?api_key=${environment.apiKey}`
       );
   }
 
