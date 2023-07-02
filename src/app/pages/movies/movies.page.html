@@ -14,7 +14,7 @@
         {{ item.title }}
         <p>{{ item.release_date | date:'y' }}</p> <!--pipe operator is angular-->
       </ion-label>
-      <ion-badge slot="end"> {{ item.vote_average }} </ion-badge>
+      <ion-badge color="success" slot="end"> {{ item.vote_average }} </ion-badge>
     </ion-item>
   </ion-list>
 
