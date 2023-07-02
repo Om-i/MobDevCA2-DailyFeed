@@ -6,7 +6,7 @@ ionic serve --public-host=8100-omi-mobdevca2dailyfe-223ejx59a2w.ws-eu101.gitpod.
 
 git config --global user.email "115377488+Om-i@users.noreply.github.com"
 git add *
-git commit -m "Routing, Details Page and Back Button"
+git commit -m "Details Content (iconicons and click button)"
 git push 
 (or 'git push -u origin --all' to create upstream branch, useful only for the 1st commit)
 
