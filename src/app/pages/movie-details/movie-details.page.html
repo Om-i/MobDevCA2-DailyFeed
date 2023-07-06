@@ -27,21 +27,23 @@
       <ion-label color="medium">{{ movie.overview }}</ion-label>
 
       <ion-item lines="none">
-        <ion-icon name="calendar-outline" slot="start"></ion-icon>
-        <ion-label>{{ movie.release_date | date: 'y' }}</ion-label>
+        <ion-icon name="calendar-outline" slot="start" title="Release Date"></ion-icon>
+        <ion-label>{{ movie.release_date | date: 'y, MMMM d' }}</ion-label>
+        <!--https://angular.io/api/common/DatePipe-->
       </ion-item>
 
       <ion-item lines="none" *ngIf="movie.budget!=0">
-        <ion-icon name="cash-outline" slot="start"></ion-icon>
-        <ion-label>{{ movie.budget | currency: 'EUR' }}</ion-label>
+        <ion-icon name="cash-outline" slot="start" title="Budget"></ion-icon>
+        <ion-label>{{ movie.budget | currency }}</ion-label>
       </ion-item>
 
     </ion-card-content>
   </ion-card>
-</ion-content>
 
-<ion-footer>
-  <ion-button color="success" expand="full" (click)="openHomepage()">
-    Go to Official Website
-  </ion-button>
-</ion-footer>
+  <ion-footer>
+    <ion-button color="success" expand="full" (click)="openHomepage()">
+      Go to Official Website
+    </ion-button>
+  </ion-footer>
+
+</ion-content>
