@@ -1,12 +1,12 @@
 npm i -g @ionic/cli
 [ionic start ca2app blank --type=angular]
 cd ca2app
-ionic serve --public-host=8100-omi-mobdevca2dailyfe-7v75ccfzluv.ws-eu101.gitpod.io
+ionic serve --public-host=8100-omi-mobdevca2dailyfe-qxhx3dca4i6.ws-eu101.gitpod.io
 
 
 git config --global user.email "115377488+Om-i@users.noreply.github.com"
 git add *
-git commit -m "added styling and icons"
+git commit -m "Api changed to upcoming + removed hostcheck"
 git push 
 (or 'git push -u origin --all' to create upstream branch, useful only for the 1st commit)
 

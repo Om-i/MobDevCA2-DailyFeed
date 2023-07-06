@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MoviesPage implements OnInit {
   movies: any[] = [];
-  currentPage =1;
+  currentPage = 1;
   imageBaseUrl = environment.images;
 
   constructor(private movieService: MovieService, private loadingCtrl: LoadingController) { }
@@ -39,7 +39,7 @@ export class MoviesPage implements OnInit {
     });
   }
 
-  loadMore(event: any){ // (event: InfiniteScrollCustomEvent) is not working?
+  loadMore(event: any) { // (event: InfiniteScrollCustomEvent) is not working?
     this.currentPage++;
     this.loadMovies(event);
   };
