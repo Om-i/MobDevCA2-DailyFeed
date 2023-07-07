@@ -6,7 +6,7 @@ ionic serve --public-host=8100-omi-mobdevca2dailyfe-qxhx3dca4i6.ws-eu101.gitpod.
 
 git config --global user.email "115377488+Om-i@users.noreply.github.com"
 git add *
-git commit -m "Added Storage and Favourite button"
+git commit -m "Favourites List"
 git push 
 (or 'git push -u origin --all' to create upstream branch, useful only for the 1st commit)
 
