@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list *ngIf="movies.length > 0; else noFavorites"> <!-- use template if no favs -->
     <ion-item button *ngFor="let item of movies" [routerLink]="['/tabs/movies', item.id]">
       <ion-avatar slot="start">
         <img [src]="imageBaseUrl + '/w92' + item.poster_path" />
@@ -17,4 +17,8 @@
       <ion-badge color="success" slot="end"> {{ item.vote_average | number:'1.0-1' }} </ion-badge>
     </ion-item>
   </ion-list>
+
+  <ng-template #noFavorites>
+    <div class="center">Favourites list is empty</div>
+  </ng-template>
 </ion-content>

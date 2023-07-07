@@ -20,12 +20,14 @@ export class FavouritesPage implements OnInit {
       private favouriteService: FavouriteService
     ) {}
   
-    ngOnInit() {
-      this.loadMovies();
+    ngOnInit() {}
+
+    ionViewWillEnter() {
+      this.loadMovies(); // read database on display
     }
   
     async loadMovies() {
-      // this.movies = [];
+      this.movies = []; // clear removed favourites
       const loading = await this.loadingCtrl.create({
         message: 'Loading...',
         spinner: 'bubbles',
@@ -33,11 +35,17 @@ export class FavouritesPage implements OnInit {
       await loading.present();
   
       const favorites = await this.favouriteService.getAllFavouriteFilms();
+
+      if (!favorites || favorites.length === 0) { // if favourites list is not null nor empty
+        loading.dismiss();
+      } else {
+
       forkJoin<any[]>(favorites.map((id: any) => this.movieService.getMovieDetails(id)))
         .pipe(finalize(() => loading.dismiss()))
         .subscribe((movies) => {
           this.movies.push(...movies);
         });
         console.log(this.movies);
+      }
     }
   }
