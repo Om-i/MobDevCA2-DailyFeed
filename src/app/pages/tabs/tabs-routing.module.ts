@@ -9,6 +9,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: '',
+        redirectTo: '/tabs/movies',
+        pathMatch: 'full',
+      },
+      {
         path: 'movies',
         children: [
           {
