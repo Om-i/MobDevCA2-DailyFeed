@@ -26,7 +26,7 @@ export class MoviesPage implements OnInit {
     });
     await loading.present();
 
-    this.movieService.getTopRatedMovies(this.currentPage).subscribe((res) => {
+    this.movieService.getMovies(this.currentPage).subscribe((res) => {
       loading.dismiss();
       this.movies.push(...res.results);
       console.log(res);

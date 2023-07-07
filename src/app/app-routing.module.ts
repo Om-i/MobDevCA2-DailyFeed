@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs/movies',
+    redirectTo: 'tabs/movies', // home
     pathMatch: 'full'
   },
   {

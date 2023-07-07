@@ -1,9 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="secondary">
-    <ion-title> {{ movie?.title }} </ion-title>
+
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/movies"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/movies"></ion-back-button>
     </ion-buttons>
+
+    <ion-title> {{ movie?.title }} </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteFilm()" *ngIf="isFavourite">
+        <ion-icon name="star" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteFilm()" *ngIf="!isFavourite">
+        <ion-icon name="star-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -28,8 +40,7 @@
 
       <ion-item lines="none">
         <ion-icon name="calendar-outline" slot="start" title="Release Date"></ion-icon>
-        <ion-label>{{ movie.release_date | date: 'y, MMMM d' }}</ion-label>
-        <!--https://angular.io/api/common/DatePipe-->
+        <ion-label>{{ movie.release_date | date: 'y, MMMM d' }}</ion-label> <!--https://angular.io/api/common/DatePipe-->
       </ion-item>
 
       <ion-item lines="none" *ngIf="movie.budget!=0">
@@ -39,6 +50,7 @@
 
     </ion-card-content>
   </ion-card>
+
 
   <ion-footer>
     <ion-button color="success" expand="full" (click)="openHomepage()">
